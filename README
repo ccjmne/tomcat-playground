@@ -47,7 +47,7 @@ What me do? --------------------------------------------------------------------
 
         @Override
         protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
-            resp.setStatus(418); // Close enough.
+            res.setStatus(418); // Close enough.
         }
 
 In the box ---------------------------------------------------------------------

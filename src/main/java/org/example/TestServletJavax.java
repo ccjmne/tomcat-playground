@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/test")
 public class TestServletJavax extends HttpServlet {
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		final PrintWriter out = resp.getWriter();
-		resp.setContentType("text/plain");
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
+		final PrintWriter out = res.getWriter();
+		res.setContentType("text/plain");
 		out.println(String.format("%20s  %s", "", "------------ METHODS ------------"));
 		out.println(String.format("%20s: %s", "getRequestURL()",  req.getRequestURL()));
 		out.println(String.format("%20s: %s", "getRemoteAddr()",  req.getRemoteAddr()));
