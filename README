@@ -27,9 +27,23 @@ Minimal? -----------------------------------------------------------------------
 What me do? --------------------------------------------------------------------
 
     Just edit the Dockerfile, server.xml and TestServlet.java.
+    Then, run start.sh: it'll compile your Java Servlet and serve it in Tomcat.
 
-    Then, run start.sh: It'll compile your Java app (in the app directory),
-    and host it in a Tomcat server.
+    I want a different environment! ................................. Dockerfile
+
+        FROM maven:3.9.6-eclipse-temurin-17 AS build
+        FROM tomcat:10.0
+
+    I have some funky Tomcat config! ................................ server.xml
+
+        <Valve className="org.apache.catalina.valves.RemoteIpValve" />
+
+    My servlet should make coffee! ............................ TestServlet.java
+
+        @Override
+        protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+            resp.setStatus(418);
+        }
 
 In the box ---------------------------------------------------------------------
 
