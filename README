@@ -7,8 +7,11 @@ Latest: 22/07/2025             =================
 Minimal? -----------------------------------------------------------------------
 
     Sure. You've never seen a Java project with that few files; hallelujah.
-    Once you've run it once, you can restart it again in ~50ms.  If you change
-    the Java code, it'll add some extra ~3s to recompile.
+
+    After you've run it once, you can restart it again in ~1500ms (there's
+    quite a bit of overhead in spawning a JVM and encapsulating all operations
+    in Docker containers).  If you change the Java code, it'll add some extra
+    ~3500ms to recompile.
 
     You don't even need Java or Tomcat installed, everything's done in Docker:
     edit your files in vi or whatever, and get experimenting!
