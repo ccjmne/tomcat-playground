@@ -1,23 +1,23 @@
 #! /bin/sh -x
 
-curl -h "x-forwarded-host: mercateo.com" -h "x-forwarded-port: 8888" -h 'x-forwarded-proto: eric' http://localhost:8080/test
-curl -h "x-forwarded-host: mercateo.com" -h "x-forwarded-port: 8888" -h 'x-forwarded-proto: http' http://localhost:8080/test
-curl -h "x-forwarded-host: mercateo.com" -h "x-forwarded-port: 8888" -h 'x-forwarded-proto: https' http://localhost:8080/test
-curl -h "x-forwarded-host: mercateo.com" -h "x-forwarded-port: 8888" http://localhost:8080/test
-curl -h "x-forwarded-host: mercateo.com" -h 'x-forwarded-proto: eric' http://localhost:8080/test
-curl -h "x-forwarded-host: mercateo.com" -h 'x-forwarded-proto: http' http://localhost:8080/test
-curl -h "x-forwarded-host: mercateo.com" -h 'x-forwarded-proto: https' -h 'host: mercateo.com' http://localhost:8080/test
-curl -h "x-forwarded-host: mercateo.com" -h 'x-forwarded-proto: https' http://localhost:8080/test
-curl -h "x-forwarded-host: mercateo.com" http://localhost:8080/test
-curl -h 'host: mercateo.com' http://localhost:8080/test
-curl -h 'host: mercateo.com:4444' -h 'x-forwarded-proto: eric' http://localhost:8080/test
-curl -h 'host: mercateo.com:4444' -h 'x-forwarded-proto: http' http://localhost:8080/test
-curl -h 'host: mercateo.com:4444' -h 'x-forwarded-proto: https' http://localhost:8080/test
-curl -h 'host: mercateo.com:4444' http://localhost:8080/test
-curl -h 'x-forwarded-host: mercateo.com' http://localhost:8080/test
-curl -h 'x-forwarded-host: mercateo.com' http://localhost:8080/test -h 'eric: on'
-curl -h 'x-forwarded-host: mercateo.com' http://localhost:8080/test -h 'https: off'
-curl -h 'x-forwarded-host: mercateo.com' http://localhost:8080/test -h 'https: on'
-curl -h 'x-forwarded-proto: http' -h 'host: mercateo.com' http://localhost:8080/test
-curl -h 'x-forwarded-proto: https' -h 'host: mercateo.com' http://localhost:8080/test
+curl -H "x-forwarded-host: mercateo.com" -H "x-forwarded-port: 8888" -H 'x-forwarded-proto: eric' http://localhost:8080/test
+curl -H "x-forwarded-host: mercateo.com" -H "x-forwarded-port: 8888" -H 'x-forwarded-proto: http' http://localhost:8080/test
+curl -H "x-forwarded-host: mercateo.com" -H "x-forwarded-port: 8888" -H 'x-forwarded-proto: https' http://localhost:8080/test
+curl -H "x-forwarded-host: mercateo.com" -H "x-forwarded-port: 8888" http://localhost:8080/test
+curl -H "x-forwarded-host: mercateo.com" -H 'x-forwarded-proto: eric' http://localhost:8080/test
+curl -H "x-forwarded-host: mercateo.com" -H 'x-forwarded-proto: http' http://localhost:8080/test
+curl -H "x-forwarded-host: mercateo.com" -H 'x-forwarded-proto: https' -H 'host: mercateo.com' http://localhost:8080/test
+curl -H "x-forwarded-host: mercateo.com" -H 'x-forwarded-proto: https' http://localhost:8080/test
+curl -H "x-forwarded-host: mercateo.com" http://localhost:8080/test
+curl -H 'host: mercateo.com' http://localhost:8080/test
+curl -H 'host: mercateo.com:4444' -H 'x-forwarded-proto: eric' http://localhost:8080/test
+curl -H 'host: mercateo.com:4444' -H 'x-forwarded-proto: http' http://localhost:8080/test
+curl -H 'host: mercateo.com:4444' -H 'x-forwarded-proto: https' http://localhost:8080/test
+curl -H 'host: mercateo.com:4444' http://localhost:8080/test
+curl -H 'x-forwarded-host: mercateo.com' http://localhost:8080/test
+curl -H 'x-forwarded-host: mercateo.com' http://localhost:8080/test -H 'eric: on'
+curl -H 'x-forwarded-host: mercateo.com' http://localhost:8080/test -H 'https: off'
+curl -H 'x-forwarded-host: mercateo.com' http://localhost:8080/test -H 'https: on'
+curl -H 'x-forwarded-proto: http' -H 'host: mercateo.com' http://localhost:8080/test
+curl -H 'x-forwarded-proto: https' -H 'host: mercateo.com' http://localhost:8080/test
 curl http://localhost:8080/test
