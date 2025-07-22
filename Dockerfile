@@ -1,8 +1,8 @@
 FROM maven:3-eclipse-temurin-17 AS build
 WORKDIR /app
-COPY ./app/pom.xml /app/pom.xml
+COPY pom.xml pom.xml
 RUN mvn dependency:go-offline
-COPY ./app /app
+COPY src src
 RUN mvn clean package
 
 FROM tomcat:10.0
