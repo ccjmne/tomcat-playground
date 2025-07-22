@@ -34,17 +34,19 @@ What me do? --------------------------------------------------------------------
 
     I want a different environment! ................................. Dockerfile
 
-        FROM maven:3.9.6-eclipse-temurin-17 AS build
+        FROM maven:3-eclipse-temurin-17 AS build
         FROM tomcat:10.0
 
     I have some funky Tomcat config! ................................ server.xml
 
-        <Valve className="org.apache.catalina.valves.RemoteIpValve" />
+        <Valve className="org.apache.catalina.valves.RemoteIpValve"
+               httpServerPort="8765"
+               httpsServerPort="5678" />
 
     My servlet should make coffee! ............................ TestServlet.java
 
         @Override
-        protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
             resp.setStatus(418); // Close enough.
         }
 
