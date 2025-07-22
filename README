@@ -40,9 +40,4 @@ Testing ------------------------------------------------------------------------
     Some quick test lines (that pertain to some RemoveIpValve exploration) are
     available in test.sh.
 
-TODO ------------------------------------------------------------------------
-
-    What if you don't have Java installed?  Let's just compile the app within
-    Docker as well.
-
                                                       vim: set tw=80 sw=4 et sta
