@@ -59,6 +59,14 @@ In the box ---------------------------------------------------------------------
     You can edit the server.xml.  Right now, it's got a basic RemoteIpValve
     configured.
 
+        curl -H 'host: mercateo.com:4444' -H 'x-forwarded-proto: https' http://localhost:8080/test
+
+               getRequestURL: https://mercateo.com:5678/test
+                        host: mercateo.com:4444
+                  user-agent: curl/8.15.0
+                      accept: */*
+           x-forwarded-proto: https
+
 Testing ------------------------------------------------------------------------
 
     Some quick test lines (that pertain to some RemoveIpValve exploration) are
