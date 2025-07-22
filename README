@@ -6,12 +6,12 @@ Latest: 2025-07-22             =================                     René Maza
 
 Minimal? -----------------------------------------------------------------------
 
-    Sure. You've never seen a Java project with that few files; hallelujah.
+    Sure.  You've never seen a Java project with that few files; hallelujah.
 
-    After you've run it once, you can restart it again in ~1500ms (there's
-    quite a bit of overhead in spawning a JVM and encapsulating all operations
-    in Docker containers).  If you change the Java code, it'll add some extra
-    ~3500ms to recompile.
+    After you've run it once, you can restart it again in ~1500ms (there's a bit
+    of overhead in spawning a JVM and encapsulating all operations in Docker
+    containers).  If you change the Java code, it'll add some extra ~3500ms to
+    recompile.
 
     You don't even need Java or Tomcat installed, everything's done in Docker:
     edit your files in vi or whatever, and get experimenting!
@@ -32,18 +32,18 @@ What me do? --------------------------------------------------------------------
     Just edit the Dockerfile, server.xml and TestServlet.java.
     Then, run start.sh: it'll compile your Java servlet and serve it in Tomcat.
 
-    I want a different environment! ................................. Dockerfile
+    I want a different environment ......... then edit .............. Dockerfile
 
         FROM maven:3-eclipse-temurin-17 AS build
         FROM tomcat:10.0
 
-    I have some funky Tomcat config! ................................ server.xml
+    I have some funky Tomcat config ........ then edit .............. server.xml
 
         <Valve className="org.apache.catalina.valves.RemoteIpValve"
                httpServerPort="8765"
                httpsServerPort="5678" />
 
-    My servlet should make coffee! ............................ TestServlet.java
+    My servlet should make coffee .......... then edit ........ TestServlet.java
 
         @Override
         protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
@@ -52,13 +52,17 @@ What me do? --------------------------------------------------------------------
 
 In the box ---------------------------------------------------------------------
 
-    Right now, it's got two servlet configured, which only echo out the request
-    URL and the headers.  The only difference between these two is the use of
-    javax vs jakarta: if you use tomcat 10 or later in Dockerfile, only the one
-    using jakarta will be scanned, and vice-versa using tomcat 9 or earlier.
+    Right now, it's got two servlets configured, both of which merely reply to
+    each incoming HttpServletRequest (GET only) with its headers, as well as
+    the output of some interesting methods invoked on it.  They only differ in
+    the namespaces they use for Java "enterprise" APIs (Java EE): if you use
+    tomcat:10 or later in Dockerfile, then only the one using jakarta will be
+    scanned; vice versa if you choose to use tomcat:9 or earlier.
 
-    You can edit the server.xml.  Right now, it's got a basic RemoteIpValve
-    configured.
+    The server.xml currently comes with a basic RemoteIpValve configured.
+
+    Together, they allow you to explore what'd happen when serving requests
+    behind a reverse proxy:
 
         curl -H host:mercateo.com -H x-forwarded-proto:https 'http://localhost:8080/test?name=eric'
 
