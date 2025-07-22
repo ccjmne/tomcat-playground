@@ -4,9 +4,13 @@ Latest: 22/07/2025             =================
                      *Minimal* set-up for exploratory work
                            with a local Tomcat server
 
-What me do? --------------------------------------------------------------------
+Minimal? -----------------------------------------------------------------------
 
-    Just edit the Dockerfile, server.xml and TestServlet.java.
+    Sure. Once you've run it once, you can restart it again in ~50ms.  If you
+    change the Java code, it'll add some extra ~4s to recompile.
+
+    You don't even need Java or Tomcat installed, everything's done in Docker:
+    edit your files in vi or whatever, and get experimenting!
 
         .
         ├── Dockerfile
@@ -20,9 +24,12 @@ What me do? --------------------------------------------------------------------
                 ├── TestServlet.java
                 └── TestServletJavax.java
 
-Start with start.sh ----------------------------------------------------------
+What me do? --------------------------------------------------------------------
 
-    It'll compile your Java app (in whatever), and host it in a Tomcat server.
+    Just edit the Dockerfile, server.xml and TestServlet.java.
+
+    Then, run start.sh: It'll compile your Java app (in the whatever directory),
+    and host it in a Tomcat server.
 
 In the box ---------------------------------------------------------------------
 
@@ -32,7 +39,7 @@ In the box ---------------------------------------------------------------------
     the one using jakarta will be scanned, and vice-versa using tomcat 9 or
     earlier.
 
-    You can edit the server.xml. Right now, it's got a basic RemoteIpValve
+    You can edit the server.xml.  Right now, it's got a basic RemoteIpValve
     configured.
 
 Testing ------------------------------------------------------------------------
