@@ -66,19 +66,19 @@ In the box ---------------------------------------------------------------------
 
         curl -H host:mercateo.com -H x-forwarded-proto:https 'http://localhost:8080/test?name=eric'
 
-                              ------------ METHODS ------------
-             getRequestURL(): https://mercateo.com/test
-             getRemoteAddr(): 172.17.0.1
-             getServerName(): mercateo.com
-             getServerPort(): 443
-                 getScheme(): https
-                  isSecure(): true
-            getQueryString(): name=eric
-                              ------------ HEADERS ------------
-                        host: mercateo.com
-                  user-agent: curl/8.15.0
-                      accept: */*
-           x-forwarded-proto: https
+                             ------------ METHODS ------------
+             getRequestURL() https://mercateo.com/test
+             getRemoteAddr() 172.17.0.1
+             getServerName() mercateo.com
+             getServerPort() 443
+                 getScheme() https
+                  isSecure() true
+            getQueryString() name=eric
+                             ------------ HEADERS ------------
+                       host: mercateo.com
+                 user-agent: curl/8.15.0
+                     accept: */*
+          x-forwarded-proto: https
 
 Testing ------------------------------------------------------------------------
 
