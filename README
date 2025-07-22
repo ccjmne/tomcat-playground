@@ -1,24 +1,43 @@
 Revisions: 1                   Tomcat Playground
 Latest: 22/07/2025             =================
 
-Start with `start.sh` ----------------------------------------------------------
+                     *Minimal* set-up for exploratory work
+                           with a local Tomcat server
 
-    It'll compile your Java app (in `whatever`), and host it in a Tomcat server.
+What me do? --------------------------------------------------------------------
+
+    Just edit the Dockerfile, server.xml and TestServlet.java.
+
+        .
+        ├── Dockerfile
+        ├── README
+        ├── server.xml
+        ├── start.sh
+        ├── test.sh
+        └── whatever
+            ├── pom.xml
+            └── src/main/java/org/example
+                ├── TestServlet.java
+                └── TestServletJavax.java
+
+Start with start.sh ----------------------------------------------------------
+
+    It'll compile your Java app (in whatever), and host it in a Tomcat server.
 
 In the box ---------------------------------------------------------------------
 
     Right now, it's got two servlet configured, which only echo out the
-    requestURL and the headers.  The only difference between these two is
-    the use of `javax` vs `jakarta`: if you use `tomcat` 10 or later in
-    `Dockerfile`, only the one using jakarta will be scanned, and vice-versa
-    using `tomcat` 9 or earlier.
+    requestURL and the headers.  The only difference between these two is the
+    use of javax vs jakarta: if you use tomcat 10 or later in Dockerfile, only
+    the one using jakarta will be scanned, and vice-versa using tomcat 9 or
+    earlier.
 
-    You can edit the `server.xml`. Right now, it's got a basic RemoteIpValve
+    You can edit the server.xml. Right now, it's got a basic RemoteIpValve
     configured.
 
 Testing ------------------------------------------------------------------------
 
     Some quick test lines (that pertain to some RemoveIpValve exploration) are
-    available in `test.sh`.
+    available in test.sh.
 
                                                       vim: set tw=80 sw=4 et sta
