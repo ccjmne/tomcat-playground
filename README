@@ -17,16 +17,15 @@ Minimal? -----------------------------------------------------------------------
     edit your files in vi or whatever, and get experimenting!
 
         .
-        ├── Dockerfile
         ├── README
+        ├── Dockerfile
         ├── server.xml
         ├── start.sh
         ├── test.sh
-        └── app
-            ├── pom.xml
-            └── src/main/java/org/example
-                ├── TestServlet.java
-                └── TestServletJavax.java
+        ├── pom.xml
+        └── src/main/java/org/example
+            ├── TestServlet.java
+            └── TestServletJavax.java
 
 What me do? --------------------------------------------------------------------
 
