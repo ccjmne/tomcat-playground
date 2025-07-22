@@ -6,8 +6,9 @@ Latest: 22/07/2025             =================
 
 Minimal? -----------------------------------------------------------------------
 
-    Sure. Once you've run it once, you can restart it again in ~50ms.  If you
-    change the Java code, it'll add some extra ~4s to recompile.
+    Sure. You've never seen a Java project with that few files; hallelujah.
+    Once you've run it once, you can restart it again in ~50ms.  If you change
+    the Java code, it'll add some extra ~3s to recompile.
 
     You don't even need Java or Tomcat installed, everything's done in Docker:
     edit your files in vi or whatever, and get experimenting!
@@ -27,7 +28,7 @@ Minimal? -----------------------------------------------------------------------
 What me do? --------------------------------------------------------------------
 
     Just edit the Dockerfile, server.xml and TestServlet.java.
-    Then, run start.sh: it'll compile your Java Servlet and serve it in Tomcat.
+    Then, run start.sh: it'll compile your Java servlet and serve it in Tomcat.
 
     I want a different environment! ................................. Dockerfile
 
@@ -47,11 +48,10 @@ What me do? --------------------------------------------------------------------
 
 In the box ---------------------------------------------------------------------
 
-    Right now, it's got two servlet configured, which only echo out the
-    requestURL and the headers.  The only difference between these two is the
-    use of javax vs jakarta: if you use tomcat 10 or later in Dockerfile, only
-    the one using jakarta will be scanned, and vice-versa using tomcat 9 or
-    earlier.
+    Right now, it's got two servlet configured, which only echo out the request
+    URL and the headers.  The only difference between these two is the use of
+    javax vs jakarta: if you use tomcat 10 or later in Dockerfile, only the one
+    using jakarta will be scanned, and vice-versa using tomcat 9 or earlier.
 
     You can edit the server.xml.  Right now, it's got a basic RemoteIpValve
     configured.
