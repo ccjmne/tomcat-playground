@@ -60,10 +60,18 @@ In the box ---------------------------------------------------------------------
     You can edit the server.xml.  Right now, it's got a basic RemoteIpValve
     configured.
 
-        curl -H 'host: mercateo.com:4444' -H 'x-forwarded-proto: https' http://localhost:8080/test
+        curl -H host:mercateo.com -H x-forwarded-proto:https 'http://localhost:8080/test?name=eric'
 
-               getRequestURL: https://mercateo.com:5678/test
-                        host: mercateo.com:4444
+                              ------------ METHODS ------------
+             getRequestURL(): https://mercateo.com/test
+             getRemoteAddr(): 172.17.0.1
+             getServerName(): mercateo.com
+             getServerPort(): 443
+                 getScheme(): https
+                  isSecure(): true
+            getQueryString(): name=eric
+                              ------------ HEADERS ------------
+                        host: mercateo.com
                   user-agent: curl/8.15.0
                       accept: */*
            x-forwarded-proto: https
