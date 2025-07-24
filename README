@@ -85,4 +85,4 @@ Testing ------------------------------------------------------------------------
     Some quick test lines (that pertain to some RemoveIpValve exploration) are
     available in test.sh.
 
-                                                      vim: set tw=80 sw=4 et sta
+                                                          vim: tw=80 sw=4 et sta
