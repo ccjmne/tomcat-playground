@@ -85,4 +85,8 @@ Testing ------------------------------------------------------------------------
     Some quick test lines (that pertain to some RemoveIpValve exploration) are
     available in test.sh.
 
+Licensing ----------------------------------------------------------------------
+
+    MIT.  Do as you please, provided adequate attribution where appropriate.
+
                                                           vim: tw=80 sw=4 et sta
