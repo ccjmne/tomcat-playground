@@ -8,7 +8,8 @@
     <Engine name="Catalina" defaultHost="localhost">
       <Host name="localhost" appBase="webapps" unpackWARs="true" autoDeploy="true">
 
-        <Valve className="org.apache.catalina.valves.RemoteIpValve" />
+        <Valve className="org.apache.catalina.valves.RemoteIpValve"
+               hostHeader="x-forwarded-host" />
 
       </Host>
     </Engine>
