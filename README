@@ -1,5 +1,5 @@
-Revisions: 1                   Tomcat Playground                    Éric NICOLAS
-Latest: 2025-07-22             =================                     René Mazala
+Revisions: 2                   Tomcat Playground                    Éric NICOLAS
+Latest: 2025-07-30             =================                     René Mazala
 
                      *Minimal* set-up for exploratory work
                            with a local Tomcat server
@@ -29,8 +29,12 @@ Minimal? -----------------------------------------------------------------------
 
 What me do? --------------------------------------------------------------------
 
-    Just edit the Dockerfile, server.xml and TestServlet.java.
-    Then, run start.sh: it'll compile your Java servlet and serve it in Tomcat.
+    Just edit the Dockerfile, server.xml and TestServlet.java, then simply run:
+
+        start.sh [debug] ........................ debug ∈ { "debug", undefined }
+
+    It'll compile your Java servlet and serve it in Tomcat.  If "debug" is
+    passed, you'll be able to debug remotely against port 5005.
 
     I want a different environment ......... then edit .............. Dockerfile
 
