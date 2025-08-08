@@ -1,5 +1,5 @@
-Revisions: 2                   Tomcat Playground                    Éric NICOLAS
-Latest: 2025-07-30             =================                     René Mazala
+Revisions: 3                   Tomcat Playground                    Éric NICOLAS
+Latest: 2025-08-08             =================                     René Mazala
 
                      *Minimal* set-up for exploratory work
                            with a local Tomcat server
@@ -27,7 +27,7 @@ Minimal? -----------------------------------------------------------------------
             ├── TestServlet.java
             └── TestServletJavax.java
 
-What me do? --------------------------------------------------------------------
+Guidelines ---------------------------------------------------------------------
 
     Just edit the Dockerfile, server.xml and TestServlet.java, then simply run:
 
